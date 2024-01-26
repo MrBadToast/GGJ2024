@@ -1,21 +1,3 @@
-// ====================================
-//
-// Simple soundmodule for Unity
-// v 1.1
-//
-// Public domiain dedication
-// Copy or modify, commercial use are available for your project freely.
-//
-// Features : Easliy Play / Stop / Play Random pitch, volume or soundclips / FadeIn-Out
-// 
-// Notice! Only single sound could be played at once. When you play some sound while other one is playing, later one will override previous one.
-// If you want to make more than two sound at once, Create enough number of Gameobjects and then apply a soundmodule each of them.
-// Directly setting pitch or volume by AudioSource is not recommended.
-//
-// ship2042@gmail.com / @BOREALIS_FINCH (SIR_BAD_TOAST)
-//
-// ====================================
-
 using System;
 using System.Collections;
 using UnityEngine;
