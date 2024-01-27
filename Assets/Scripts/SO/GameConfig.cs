@@ -27,15 +27,6 @@ public class GameConfig : ScriptableObject
         public Level Name;
         public int CompletePoint;
 
-        //========= obsolete =========
-
-        public string OptionHint;
-        public string OptionAnswer;
-        public string OptionWrongAnwser_1;
-        public string OptionWrongAnwser_2;
-
-        //========= obsolete =========
-
         public int DefaultPoint;
         public int WrongAnswerTimes;
         public int AnswerBonusTimes;
