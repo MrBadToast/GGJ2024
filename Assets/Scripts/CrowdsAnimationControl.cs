@@ -23,4 +23,12 @@ public class CrowdsAnimationControl : MonoBehaviour
         }
     }
 
+    public void SetSpeed(float speed = 1.0f)
+    {
+        foreach(var c in crowdList)
+        {
+            c.duration = 1/speed;
+        }
+    }
+
 }
