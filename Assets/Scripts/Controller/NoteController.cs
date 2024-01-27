@@ -60,7 +60,6 @@ public class NoteController : MonoBehaviour
                 GameObject t_note = Instantiate(goNote, tfNoteAppear.position, Quaternion.identity);
                 t_note.transform.SetParent(UIManager.instance.transform);
                 noteList.Add(t_note);
-                TimingManager.instance.isEnter = false;
                 spawnCount--;
                 waitToSpawnTime = _miniGamePackageData.ArrowSpawnTime;
             }
