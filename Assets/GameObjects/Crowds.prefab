@@ -202,6 +202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6670174417122865479}
+  - component: {fileID: 8016213998194018834}
   m_Layer: 0
   m_Name: Crowds
   m_TagString: Untagged
@@ -238,6 +239,33 @@ Transform:
   - {fileID: 2024041382931415432}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8016213998194018834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459795998138171371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cdc00d04dea9340911d64ad8186707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crowdList:
+  - {fileID: 5839613834967713853}
+  - {fileID: 6091839079222722947}
+  - {fileID: 1863791340921472351}
+  - {fileID: 1674523141352013087}
+  - {fileID: 7750409604335970070}
+  - {fileID: 1212271669349703061}
+  - {fileID: 232618895447040257}
+  - {fileID: 4159315502810262127}
+  - {fileID: 4961701609002216273}
+  - {fileID: 8241678286894090844}
+  - {fileID: 313043107857667111}
+  - {fileID: 9018804498031258832}
+  - {fileID: 292290602146306004}
+  - {fileID: 898063814591372608}
 --- !u!1 &995526120766609454
 GameObject:
   m_ObjectHideFlags: 0
