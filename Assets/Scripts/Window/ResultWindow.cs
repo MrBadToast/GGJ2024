@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -35,14 +36,15 @@ public class ResultWindow : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         TotalScoreText.SetActive(true);
-        TotalScoreText.GetComponent<TextMeshProUGUI>().text = "누적 점수 " + StageController.instance.curPoint.ToString();
+        TotalScoreText.GetComponent<TextMeshProUGUI>().text = "누적 점수 " + GameManager.instance.totalScore.ToString();
         // 애니메이션 - 누적 점수 올라가는 애니메이션
         yield return new WaitForSeconds(2f);
 
-        for(int i = 0; i < StageController.instance.curPoint; i+=10)
+        for(int i = 0; i < StageController.instance.curPoint; i+=1)
         {
             CurrentScoreText.GetComponent<TextMeshProUGUI>().text = "현재 점수 " + (StageController.instance.curPoint - i).ToString();
             TotalScoreText.GetComponent<TextMeshProUGUI>().text = "누적 점수 " + (GameManager.instance.totalScore + i).ToString();
+            yield return new WaitForFixedUpdate();
         }
 
         CurrentScoreText.GetComponent<TextMeshProUGUI>().text = "현재 점수 0";
@@ -51,8 +53,33 @@ public class ResultWindow : MonoBehaviour
         // 애니메이션 - 다음 스테이지 or 다음 스테이지 or 다시 도전
         yield return new WaitForSeconds(1f);
 
-        //NextScoreText.SetActive(true);
-        //NextScoreText.GetComponent<TextMeshProUGUI>().text = "다음까지 " 
+        int nextUntil = GameManager.instance.GetNextScore() - GameManager.instance.totalScore;
+
+        NextScoreText.SetActive(true);
+        if (StageController.instance.curLevel == Level.HARD)
+        {
+            if (nextUntil < 0) nextUntil = 0;
+            NextScoreText.GetComponent<TextMeshProUGUI>().text = "엔딩까지 " + nextUntil;
+        }
+        else
+        {
+            if (nextUntil > 0)
+                NextScoreText.GetComponent<TextMeshProUGUI>().text = "다음까지 " + nextUntil;
+            else
+                NextScoreText.GetComponent<TextMeshProUGUI>().text = "난이도 상승";
+        }
+
+
+        yield return new WaitForSeconds(5f);
+
+        GetComponent<DOTweenAnimation>().DORestartAllById("FadeoutResult");
+        Tween tween = GetComponent<DOTweenAnimation>().tween;
+
+        yield return tween.WaitForCompletion();
+
+        CurrentScoreText.SetActive(false);
+        TotalScoreText.SetActive(false);
+        NextScoreText.SetActive(false);
 
         Result();
     }
