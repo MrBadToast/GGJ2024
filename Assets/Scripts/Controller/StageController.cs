@@ -41,7 +41,7 @@ public class StageController : MonoBehaviour
             curLevel = Level.HARD;
         else if (curLevel == Level.HARD)
         {
-            SceneManager.LoadScene(GameManager.instance.lastSceneName);
+            SceneLoader.Instance.LoadNewScene(GameManager.instance.lastSceneName);
             return;
         }
 

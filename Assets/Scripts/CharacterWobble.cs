@@ -29,6 +29,7 @@ public class CharacterWobble : MonoBehaviour
             int index = c.vertexIndex;
 
             Vector3 offset = Wobble(Time.time + i);
+            if (index >= vertices.Length) continue;
             vertices[index] += offset;
             vertices[index + 1] += offset;
             vertices[index + 2] += offset;
