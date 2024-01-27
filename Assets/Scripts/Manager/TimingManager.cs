@@ -11,22 +11,67 @@ public class TimingManager : MonoBehaviour
 
     public bool isEnter = false;
     public Note curNote;
+    public int score;
+
+    public NoteController theNoteController;
     
     // Update is called once per frame
     void Update()
     {
-        var keyCode = Event.current.keyCode;
         if (isEnter == true)
         {
-            if (keyCode == curNote.key)
+            if (Input.GetKeyDown(KeyCode.RightArrow) && curNote.key == KeyCode.RightArrow)
             {
-                Debug.Log("Hit");
-                Destroy(curNote.gameObject);
+                if (curNote != null)
+                {
+                    Debug.Log("Hit");
+                    StageController.instance.AddPoint(10);
+                    score++;
+                    theNoteController.noteList.Remove(curNote.gameObject);
+                    Destroy(curNote.gameObject);
+                }
+            }
+            
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && curNote.key == KeyCode.LeftArrow)
+            {
+                if (curNote != null)
+                {
+                    Debug.Log("Hit");
+                    StageController.instance.AddPoint(10);
+                    score++;
+                    theNoteController.noteList.Remove(curNote.gameObject);
+                    Destroy(curNote.gameObject);
+                }
+            }
+            
+            if (Input.GetKeyDown(KeyCode.UpArrow) && curNote.key == KeyCode.UpArrow)
+            {
+                if (curNote != null)
+                {
+                    Debug.Log("Hit");
+                    StageController.instance.AddPoint(10);
+                    score++;
+                    theNoteController.noteList.Remove(curNote.gameObject);
+                    Destroy(curNote.gameObject);
+                }
+            }
+            
+            if (Input.GetKeyDown(KeyCode.DownArrow) && curNote.key == KeyCode.DownArrow)
+            {
+                if (curNote != null)
+                {
+                    Debug.Log("Hit");
+                    StageController.instance.AddPoint(10);
+                    score++;
+                    theNoteController.noteList.Remove(curNote.gameObject);
+                    Destroy(curNote.gameObject);
+                }
             }
         }
         else
         {
-            Debug.Log("Miss");
+            if(Input.anyKey)
+                Debug.Log("Miss");
         }
     }
 }

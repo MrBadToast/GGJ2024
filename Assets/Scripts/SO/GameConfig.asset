@@ -26,7 +26,7 @@ MonoBehaviour:
     MiniGamePackage:
       ArrowSpawnCount: 3
       ArrowSpawnTime: 2
-      ArrowSpeed: 200
+      ArrowSpeed: 100
   - Name: 1
     CompletePoint: 12
     OptionHint: "\uBC30\uCD94"

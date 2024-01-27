@@ -12,11 +12,14 @@ public class Note : MonoBehaviour
 
     public Image img;
     public Sprite right, left, up, down;
+    public string curArrowDirection;
     
     public void Start()
     {
         noteSpeed = StageController.instance.CurStageLevelData.MiniGamePackage.ArrowSpeed;
-        RandomArrow();
+
+        key = KeyCode.RightArrow;
+        //RandomArrow();
     }
 
     public void RandomArrow()
@@ -27,19 +30,23 @@ public class Note : MonoBehaviour
         {
             case 0:
                 key = KeyCode.RightArrow;
-                img.sprite = right;
+                //img.sprite = right;
+                curArrowDirection = key.ToString();
                 break;
             case 1:
                 key = KeyCode.LeftArrow;
-                img.sprite = left;
+                //img.sprite = left;
+                curArrowDirection = key.ToString();
                 break;
             case 2:
                 key = KeyCode.UpArrow;
-                img.sprite = up;
+                //img.sprite = up;
+                curArrowDirection = key.ToString();
                 break;
             case 3:
                 key = KeyCode.DownArrow;
-                img.sprite = down;
+                //img.sprite = down;
+                curArrowDirection = key.ToString();
                 break;
         }
     }
