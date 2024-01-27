@@ -1,9 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
+
+    void Awake()
+    {
+        if (instance == null)
+            SetupAudioManager();
+        else if (instance != this)
+            Destroy(gameObject);
+    }
+
+    public void SetupAudioManager()
+    {
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     public AudioSource menuMusic, mainGameMusic, guestLaughMusic;
     public AudioSource[] miniGameMusic;
     public AudioSource[] allSFX;
