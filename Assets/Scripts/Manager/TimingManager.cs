@@ -130,8 +130,6 @@ public class TimingManager : MonoBehaviour
             {
                 Debug.Log("Miss");
 
-                if (AudioManager.instance != null)
-                    AudioManager.instance.PlayRandomMiniGameMusic();
             }
         }
     }
