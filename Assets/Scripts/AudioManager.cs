@@ -24,7 +24,6 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource menuMusic, mainGameMusic;
     public AudioSource[] miniGameMusic;
-    public AudioSource[] robotSounds;
     public AudioSource[] guestPositiveSounds;
     public AudioSource[] guestNegativeSounds;
     public AudioSource[] allSFX;
@@ -57,23 +56,10 @@ public class AudioManager : MonoBehaviour
     {
         mainGameMusic.volume = volume;
     }
-
-    public void PlayGuestLaughMusic()
-    {
-        StopMusic();
-        mainGameMusic.Play();
-    }
     
     public void PlaySFX(int index)
     {
         allSFX[index].Stop();
-        allSFX[index].Play();
-    }
-    
-    public void PlayRandomPitchedSFX(int index, float pitch, bool random = false)
-    {
-        allSFX[index].Stop();
-        allSFX[index].pitch = random ? Random.Range(0.25f, 1.75f) : pitch;
         allSFX[index].Play();
     }
 

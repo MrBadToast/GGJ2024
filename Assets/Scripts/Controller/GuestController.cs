@@ -28,7 +28,6 @@ public class GuestController : MonoBehaviour
     
     public IEnumerator ReactionCo()
     {
-        // 1. 계산된 점수로 애니메이션 플레이
         audioSource.PlayOneShot(badumTss);
 
         yield return new WaitForSeconds(1.5f);
