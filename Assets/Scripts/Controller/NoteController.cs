@@ -29,14 +29,14 @@ public class NoteController : MonoBehaviour
 
     IEnumerator CountDown()
     {
+        yield return new WaitForSeconds(1f);
         Debug.Log("ONE");
-        yield return new WaitForSeconds(1f);
         
+        yield return new WaitForSeconds(1f);
         Debug.Log("TWO");
-        yield return new WaitForSeconds(1f);
         
+        yield return new WaitForSeconds(.5f);
         Debug.Log("THREE");
-        yield return new WaitForSeconds(1f);
         
         isStart = true;
     }
