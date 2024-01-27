@@ -58,7 +58,7 @@ public class NoteController : MonoBehaviour
                 Debug.Log(spawnCount);
 
                 GameObject t_note = Instantiate(goNote, tfNoteAppear.position, Quaternion.identity);
-                t_note.transform.SetParent(transform);
+                UIManager.instance.transform.SetParent(transform);
                 noteList.Add(t_note);
                 TimingManager.instance.isEnter = false;
                 spawnCount--;
