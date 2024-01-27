@@ -15,7 +15,7 @@ MonoBehaviour:
   StartLevel: 0
   StageLevelDatas:
   - Name: 0
-    CompletePoint: 6
+    CompletePoint: 200
     DefaultPoint: 2
     WrongAnswerTimes: 1
     AnswerBonusTimes: 3
@@ -24,7 +24,7 @@ MonoBehaviour:
       ArrowSpawnTime: 0.5
       ArrowSpeed: 300
   - Name: 1
-    CompletePoint: 12
+    CompletePoint: 500
     DefaultPoint: 2
     WrongAnswerTimes: 1
     AnswerBonusTimes: 3
@@ -33,7 +33,7 @@ MonoBehaviour:
       ArrowSpawnTime: 2
       ArrowSpeed: 200
   - Name: 2
-    CompletePoint: 18
+    CompletePoint: 1500
     DefaultPoint: 2
     WrongAnswerTimes: 1
     AnswerBonusTimes: 3

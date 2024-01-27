@@ -36,5 +36,22 @@ public class GameManager : MonoBehaviour
         
         StageController.instance.StartStage();
     }
+
+    public int GetNextScore()
+    {
+        if (StageController.instance.curLevel == Level.EASY)
+        {
+            return gameConfig.StageLevelDatas[0].CompletePoint;
+        }
+        else if (StageController.instance.curLevel == Level.NORMAL)
+        {
+            return gameConfig.StageLevelDatas[1].CompletePoint;
+        }
+        else if (StageController.instance.curLevel == Level.HARD)
+        {
+            return gameConfig.StageLevelDatas[2].CompletePoint;
+        }
+        else return 0;
+    }
    
 }
