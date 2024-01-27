@@ -28,11 +28,11 @@ public class AudioManager : MonoBehaviour
     public void StopMusic()
     {
         menuMusic.Stop();
-        mainGameMusic.Stop();
-        guestLaughMusic.Stop();
+        //mainGameMusic.Stop();
+        //guestLaughMusic.Stop();
         
-        foreach (var audio in miniGameMusic)
-            audio.Stop();
+        // foreach (var audio in miniGameMusic)
+        //     audio.Stop();
         
         foreach (var audio in allSFX)
             audio.Stop();

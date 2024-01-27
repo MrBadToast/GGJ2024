@@ -35,7 +35,7 @@ public class GuestController : MonoBehaviour
             
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         
         UIManager.instance.resultWindow.Open();
     }
