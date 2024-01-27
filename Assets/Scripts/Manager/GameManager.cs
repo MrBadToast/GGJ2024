@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameConfig gameConfig; 
     public Level startLevel;
     public string lastSceneName;
+    public int totalScore;
     
     void SetStartData()
     {
@@ -35,6 +36,5 @@ public class GameManager : MonoBehaviour
         
         StageController.instance.StartStage();
     }
-
    
 }

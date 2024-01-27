@@ -17,19 +17,21 @@ public class ComedySelectWindow : MonoBehaviour
     public TMP_Text txtOptionWrongAnswer_2;
     
     public List<string> answerList = new();
-    private Random rng = new(); 
-    
-    
+    private Random rng = new();
+
+    JokeOptions currentJokeOption;
+
     public void SetData()
     {
-        txtOptionHint.text = _levelData.OptionHint;
+        currentJokeOption = GameManager.instance.gameConfig.PickRandomJokeOption();
+        txtOptionHint.text = currentJokeOption.hint;
         
         if(answerList.Count > 1)
             answerList.Clear();
         
-        answerList.Add(_levelData.OptionAnswer);
-        answerList.Add(_levelData.OptionWrongAnwser_1);
-        answerList.Add(_levelData.OptionWrongAnwser_2);
+        answerList.Add(currentJokeOption.proper);
+        answerList.Add(currentJokeOption.wrong1);
+        answerList.Add(currentJokeOption.wrong2);
 
         Shuffle(answerList);
 
@@ -62,7 +64,7 @@ public class ComedySelectWindow : MonoBehaviour
             var capturedIndex = i;
             buttons[capturedIndex].onClick.AddListener(() =>
             {
-                if (answerList[capturedIndex] == _levelData.OptionAnswer)
+                if (answerList[capturedIndex].Equals(currentJokeOption.proper))
                 {
                     Debug.Log("정답입니다.");
                     StageController.instance.AddPoint(_levelData.DefaultPoint * _levelData.AnswerBonusTimes);
