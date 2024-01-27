@@ -53,3 +53,10 @@ MonoBehaviour:
       ArrowSpawnCount: 5
       ArrowSpawnTime: 2
       ArrowSpeed: 200
+  jokeOptionsList:
+  - {fileID: 11400000, guid: 02e1ad15473534a4e952ee4e1e33397c, type: 2}
+  - {fileID: 11400000, guid: 50afabebc905100499925c5565364c8f, type: 2}
+  - {fileID: 11400000, guid: b66ac8d000d7eeb478e208d09c8ab44a, type: 2}
+  - {fileID: 11400000, guid: e090a7a892536ff4bbee7941e451205e, type: 2}
+  - {fileID: 11400000, guid: 02a3ddf512c1c594fae7b72b5f88919d, type: 2}
+  - {fileID: 11400000, guid: 29f47affda4cc044ea999d5bb6d695fa, type: 2}
