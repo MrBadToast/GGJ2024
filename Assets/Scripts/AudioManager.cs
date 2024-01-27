@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 public class AudioManager : MonoBehaviour
@@ -21,7 +22,7 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public AudioSource menuMusic, mainGameMusic, guestLaughMusic;
+    public AudioSource menuMusic, mainGameMusic;
     public AudioSource[] miniGameMusic;
     public AudioSource[] robotLaughs;
     public AudioSource[] guestSounds;
@@ -31,7 +32,6 @@ public class AudioManager : MonoBehaviour
     {
         menuMusic.Stop();
         mainGameMusic.Stop();
-        //guestLaughMusic.Stop();
         
         foreach (var audio in miniGameMusic)
             audio.Stop();
@@ -50,6 +50,11 @@ public class AudioManager : MonoBehaviour
     {
         StopMusic();
         mainGameMusic.Play();
+    }
+
+    public void SetVolumeMainGameMusic(float volume)
+    {
+        mainGameMusic.volume = volume;
     }
 
     public void PlayGuestLaughMusic()

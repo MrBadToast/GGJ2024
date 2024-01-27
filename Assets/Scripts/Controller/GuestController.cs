@@ -32,16 +32,23 @@ public class GuestController : MonoBehaviour
         if (isGoodJob)
         {
             if (AudioManager.instance != null)
+            {
+                AudioManager.instance.SetVolumeMainGameMusic(.35f);
                 AudioManager.instance.PlayGuestSounds(1);
+            }
         }
         else
         {
             if (AudioManager.instance != null)
+            {
+                AudioManager.instance.SetVolumeMainGameMusic(.35f);
                 AudioManager.instance.PlayGuestSounds(0);
+            }
         }
 
         yield return new WaitForSeconds(3f);
         
+        AudioManager.instance.SetVolumeMainGameMusic(.7f);
         UIManager.instance.resultWindow.Open();
 
         isGoodJob = false;
