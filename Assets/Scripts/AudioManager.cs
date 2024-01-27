@@ -24,8 +24,9 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource menuMusic, mainGameMusic;
     public AudioSource[] miniGameMusic;
-    public AudioSource[] robotLaughs;
-    public AudioSource[] guestSounds;
+    public AudioSource[] robotSounds;
+    public AudioSource[] guestPositiveSounds;
+    public AudioSource[] guestNegativeSounds;
     public AudioSource[] allSFX;
 
     public void StopMusic()
@@ -85,11 +86,19 @@ public class AudioManager : MonoBehaviour
         miniGameMusic[index].Play();
     }
 
-    public void PlayGuestSounds(int index)
+    public void PlayRandomGuestPositiveSound()
     {
-        foreach (var audio in guestSounds)
-            audio.Stop();
+        foreach (var sound in guestPositiveSounds)
+            sound.Stop();
 
-        guestSounds[index].Play();
+        guestPositiveSounds[Random.Range(0, guestPositiveSounds.Length - 1)].Play();
+    }
+
+    public void PlayRandomGuestNegativeSound()
+    {
+        foreach (var sound in guestNegativeSounds)
+            sound.Stop();
+
+        guestNegativeSounds[Random.Range(0, guestNegativeSounds.Length - 1)].Play();
     }
 }

@@ -34,7 +34,7 @@ public class GuestController : MonoBehaviour
             if (AudioManager.instance != null)
             {
                 AudioManager.instance.SetVolumeMainGameMusic(.35f);
-                AudioManager.instance.PlayGuestSounds(1);
+                AudioManager.instance.PlayRandomGuestPositiveSound();
             }
         }
         else
@@ -42,7 +42,7 @@ public class GuestController : MonoBehaviour
             if (AudioManager.instance != null)
             {
                 AudioManager.instance.SetVolumeMainGameMusic(.35f);
-                AudioManager.instance.PlayGuestSounds(0);
+                AudioManager.instance.PlayRandomGuestNegativeSound();
             }
         }
 
