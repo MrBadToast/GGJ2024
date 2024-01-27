@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 354, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6069013747574965810
 CanvasRenderer:
@@ -153,3 +153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteSpeed: 400
+  key: 0
+  img: {fileID: 0}
+  right: {fileID: 0}
+  left: {fileID: 0}
+  up: {fileID: 0}
+  down: {fileID: 0}
+  curArrowDirection: 

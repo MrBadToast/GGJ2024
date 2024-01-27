@@ -27,22 +27,7 @@ public class MiniGameWindow : MonoBehaviour
         SetData();
         
         gameObject.SetActive(true);
-
-        StartCoroutine(MiniGameStart());
         
         _theNoteController.SetData(_miniGamePackageData);
-    }
-
-    IEnumerator MiniGameStart()
-    {
-        Debug.Log("미니게임 시작");
-        yield return null;
-        
-        Debug.Log("미니게임 종료");
-        //gameObject.SetActive(false);
-
-        GuestController.instance.AudienceReaction();
-        
-        UIManager.instance.resultWindow.Open();
     }
 }

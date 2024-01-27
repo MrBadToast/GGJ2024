@@ -5,45 +5,73 @@ using UnityEngine;
 
 public class NoteController : MonoBehaviour
 {
-    public int bpm = 0;
     private double currentTime = 0d;
     [SerializeField] private Transform tfNoteAppear;
     [SerializeField] private GameObject goNote;
 
     public TimingManager timingManager;
-    public float waitToCreate;
+    public float waitToSpawnTime;
+    public int spawnCount;
     
     private GameConfig.MiniGamePackageData _miniGamePackageData;
+
+    public bool isStart;
+
+    public List<GameObject> noteList = new();
     public void SetData(GameConfig.MiniGamePackageData miniGamePackageData)
     {
         _miniGamePackageData = miniGamePackageData;
+        spawnCount = miniGamePackageData.ArrowSpawnCount;
+        waitToSpawnTime = miniGamePackageData.ArrowSpawnTime;
+
+        StartCoroutine(CountDown());
     }
 
-    public void CreateArrowNote()
+    IEnumerator CountDown()
     {
-        if (currentTime >= 60d / bpm)
-        {
-            for (int i = 0; i < _miniGamePackageData.ArrowSpawnCount; i++)
-            {
-                GameObject t_note = Instantiate(goNote, tfNoteAppear.position, Quaternion.identity);
-                t_note.transform.SetParent(transform);
-                TimingManager.instance.isEnter = false;
-            }
-            currentTime -= 60d / bpm;
-        }
+        Debug.Log("ONE");
+        yield return new WaitForSeconds(1f);
+        
+        Debug.Log("TWO");
+        yield return new WaitForSeconds(1f);
+        
+        Debug.Log("THREE");
+        yield return new WaitForSeconds(1f);
+        
+        isStart = true;
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        waitToCreate -= Time.deltaTime;
-
-        if (currentTime >= 60d / bpm)
+        if (isStart == false) 
+            return;
+        
+        if (spawnCount > 0)
         {
-            GameObject t_note = Instantiate(goNote, tfNoteAppear.position, Quaternion.identity);
-            t_note.transform.SetParent(transform);
-            currentTime -= 60d / bpm;
-            TimingManager.instance.isEnter = false;
+            waitToSpawnTime -= Time.deltaTime;
+            //Debug.Log($"waitToSpawnTime :: {waitToSpawnTime}");
+
+            if (waitToSpawnTime <= 0)
+            {
+                Debug.Log(spawnCount);
+
+                GameObject t_note = Instantiate(goNote, tfNoteAppear.position, Quaternion.identity);
+                t_note.transform.SetParent(transform);
+                noteList.Add(t_note);
+                TimingManager.instance.isEnter = false;
+                spawnCount--;
+                waitToSpawnTime = _miniGamePackageData.ArrowSpawnTime;
+            }
+        }
+
+        if (spawnCount <= 0 && noteList.Count <= 0)
+        {
+            GuestController.instance.AudienceReaction(TimingManager.instance.score,
+                _miniGamePackageData.ArrowSpawnCount);
+            UIManager.instance.miniGameWindow.gameObject.SetActive(false);
+            isStart = false;
         }
     }
 
@@ -52,6 +80,7 @@ public class NoteController : MonoBehaviour
         if (other.CompareTag("Note"))
         {
             Destroy(other.gameObject);
+            noteList.Remove(other.gameObject);
         }
     }
 }

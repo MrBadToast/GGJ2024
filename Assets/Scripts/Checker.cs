@@ -10,8 +10,7 @@ public class Checker : MonoBehaviour
         if (other.CompareTag("Note"))
         {
             TimingManager.instance.isEnter = true;
-            TimingManager.instance.curObj = other.gameObject;
-
+            TimingManager.instance.curNote = other.GetComponent<Note>();
         }
     }
 }
