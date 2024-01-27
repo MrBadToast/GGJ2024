@@ -26,11 +26,15 @@ public class GameConfig : ScriptableObject
     {
         public Level Name;
         public int CompletePoint;
-        
+
+        //========= obsolete =========
+
         public string OptionHint;
         public string OptionAnswer;
         public string OptionWrongAnwser_1;
         public string OptionWrongAnwser_2;
+
+        //========= obsolete =========
 
         public int DefaultPoint;
         public int WrongAnswerTimes;
@@ -41,4 +45,10 @@ public class GameConfig : ScriptableObject
 
     public Level StartLevel;
     public StageLevelData[] StageLevelDatas;
+    public JokeOptions[] jokeOptionsList;
+
+    public JokeOptions PickRandomJokeOption()
+    {
+        return jokeOptionsList[Random.Range(0, jokeOptionsList.Length)];
+    }
 }

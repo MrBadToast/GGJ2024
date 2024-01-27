@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f5d55b50616954faf6a872fbc56e83, type: 3}
+  m_Name: JOKE_TYPE4
+  m_EditorClassIdentifier: 
+  hint: "- \uCCAD\uC911 \uB300\uBD80\uBD84 \uC21C\uC218\uD55C \uC5B4\uB9B0 \uC544\uC774\uB4E4\n-
+    \uC194\uC9C1\uD788 \uBB58 \uD574\uB3C4 \uC6C3\uAE38\uAC83 \uAC19\uAE34 \uD558\uC9C0\uB9CC
+    \uD2B9\uBCC4\uD788 \uC544\uC774\uB4E4\uC774 \uC88B\uC544\uD560\uB9CC\uD55C\uAC8C
+    \uC788\uC744\uC9C0\uB3C4?"
+  proper: "\uC5BC\uAD74\uAC1C\uADF8"
+  wrong1: "\uBE14\uB799\uC720\uBA38"
+  wrong2: "\uCD94\uC5B5\uC758 \uAC1C\uADF8"
