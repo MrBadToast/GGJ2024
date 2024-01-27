@@ -12,6 +12,11 @@ public class TimingManager : MonoBehaviour
     public bool isEnter = false;
     public Note curNote;
     public int score;
+    public GameObject burstRing;
+    public AudioSource beepSound;
+    public AudioSource voiceSound;
+
+    public AudioClip[] voices;
 
     public NoteController theNoteController;
     
@@ -28,14 +33,19 @@ public class TimingManager : MonoBehaviour
                     StageController.instance.AddPoint(10);
                     score++;
                     theNoteController.noteList.Remove(curNote.gameObject);
-                    
-                    if(AudioManager.instance != null)
-                        AudioManager.instance.PlayRandomMiniGameMusic();
 
                     if (PlayerController.instance != null)
                         PlayerController.instance.CorrectAnswer();
                     
+                    burstRing.SetActive(false);
+                    burstRing.SetActive(true);
+                    beepSound.Play();
+                    voiceSound.pitch = 1.0f;
+                    voiceSound.PlayOneShot(voices[UnityEngine.Random.Range(0, voices.Length)]);
+
                     Destroy(curNote.gameObject);
+
+                    return;
                 }
             }
             
@@ -48,13 +58,18 @@ public class TimingManager : MonoBehaviour
                     score++;
                     theNoteController.noteList.Remove(curNote.gameObject);
                     
-                    if(AudioManager.instance != null)
-                        AudioManager.instance.PlayRandomMiniGameMusic();
-                    
                     if (PlayerController.instance != null)
                         PlayerController.instance.CorrectAnswer();
-                    
+
+                    burstRing.SetActive(false);
+                    burstRing.SetActive(true);
+                    beepSound.Play();
+                    voiceSound.pitch = 1.1f;
+                    voiceSound.PlayOneShot(voices[UnityEngine.Random.Range(0, voices.Length)]);
+
                     Destroy(curNote.gameObject);
+
+                    return;
                 }
             }
             
@@ -67,13 +82,18 @@ public class TimingManager : MonoBehaviour
                     score++;
                     theNoteController.noteList.Remove(curNote.gameObject);
                     
-                    if(AudioManager.instance != null)
-                        AudioManager.instance.PlayRandomMiniGameMusic();
-                    
                     if (PlayerController.instance != null)
                         PlayerController.instance.CorrectAnswer();
-                    
+
+                    burstRing.SetActive(false);
+                    burstRing.SetActive(true);
+                    beepSound.Play();
+                    voiceSound.pitch = 1.3f;
+                    voiceSound.PlayOneShot(voices[UnityEngine.Random.Range(0, voices.Length)]);
+
                     Destroy(curNote.gameObject);
+
+                    return;
                 }
             }
             
@@ -91,15 +111,28 @@ public class TimingManager : MonoBehaviour
                     
                     if (PlayerController.instance != null)
                         PlayerController.instance.CorrectAnswer();
-                    
+
+                    burstRing.SetActive(false);
+                    burstRing.SetActive(true);
+                    beepSound.Play();
+                    voiceSound.pitch = 0.7f;
+                    voiceSound.PlayOneShot(voices[UnityEngine.Random.Range(0, voices.Length)]);
+
                     Destroy(curNote.gameObject);
+
+
                 }
             }
         }
         else
         {
-            if(Input.anyKey)
+            if (Input.anyKey)
+            {
                 Debug.Log("Miss");
+
+                if (AudioManager.instance != null)
+                    AudioManager.instance.PlayRandomMiniGameMusic();
+            }
         }
     }
 }

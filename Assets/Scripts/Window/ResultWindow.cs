@@ -91,13 +91,13 @@ public class ResultWindow : MonoBehaviour
 
     public void Result()
     {
-        if (StageController.instance.curPoint < completePoint)
-        {
-            StageController.instance.Restart();
-        }
-        else if (StageController.instance.curPoint >= completePoint)
+        if (GameManager.instance.GetNextScore() - GameManager.instance.totalScore <= 0)
         {
             StageController.instance.NextLevel();
+        }
+        else
+        {
+            StageController.instance.Restart();
         }
     }
 

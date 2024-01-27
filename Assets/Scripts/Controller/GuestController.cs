@@ -7,6 +7,9 @@ public class GuestController : MonoBehaviour
 {
     public static GuestController instance;
     private void Awake() => instance = this;
+    public CrowdsAnimationControl crowdAnim;
+    public AudioSource audioSource;
+    public AudioClip badumTss;
 
     public bool isGoodJob;
     
@@ -26,8 +29,9 @@ public class GuestController : MonoBehaviour
     public IEnumerator ReactionCo()
     {
         // 1. 계산된 점수로 애니메이션 플레이
+        audioSource.PlayOneShot(badumTss);
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
         
         if (isGoodJob)
         {
@@ -35,6 +39,7 @@ public class GuestController : MonoBehaviour
             {
                 AudioManager.instance.SetVolumeMainGameMusic(.35f);
                 AudioManager.instance.PlayRandomGuestPositiveSound();
+                crowdAnim.SetSpeed(1.5f);
             }
         }
         else
@@ -43,11 +48,14 @@ public class GuestController : MonoBehaviour
             {
                 AudioManager.instance.SetVolumeMainGameMusic(.35f);
                 AudioManager.instance.PlayRandomGuestNegativeSound();
+                crowdAnim.PauseAll();
             }
         }
 
         yield return new WaitForSeconds(3f);
-        
+
+        crowdAnim.PlayAll();
+        crowdAnim.SetSpeed(1.0f);
         AudioManager.instance.SetVolumeMainGameMusic(.7f);
         UIManager.instance.resultWindow.Open();
 

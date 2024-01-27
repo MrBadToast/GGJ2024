@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f5d55b50616954faf6a872fbc56e83, type: 3}
   m_Name: JOKE_TYPE5
   m_EditorClassIdentifier: 
-  hint: "- \uCCAD\uC911 50\uB300 \uC774\uC0C1\uC758 \uC911\uC7A5\uB144\n- \uC74C\uC2DD\uB3C4
-    \uAC00\uAD6C\uB3C4 \uADF8\uB9AC\uACE0 \uC18D\uC637\uAE4C\uC9C0\uB3C4 \"\uC2E0\uD1A0\uBD88\uC774\"\uAC00
-    \uBD99\uC73C\uBA74 \uC88B\uC544\uD558\uC2EC"
+  hint: "- \uCCAD\uC911 50\uB300 \uC774\uC0C1\uC758 \uC911\uC7A5\uB144\n- \uD5A5\uC218\uAC00
+    \uB290\uAEF4\uC9C0\uB294 \uAC83\uC774 \uCDE8\uD5A5"
   proper: "\uCD94\uC5B5\uC758 \uAC1C\uADF8"
   wrong1: "\uC720\uD589\uC5B4 \uB18D\uB2F4"
   wrong2: "\uBC14\uBCF4 \uD749\uB0B4"

@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
         // 0. 현재 데이터에 해당하는 
         SetStartData();
         StartCoroutine(BeforeGameStartCo());
+
+        if (AudioManager.instance != null)
+            AudioManager.instance.PlayMainGameMusic();
     }
 
     IEnumerator BeforeGameStartCo()

@@ -30,24 +30,24 @@ public class StageController : MonoBehaviour
         // 4. ComedySelectWindow 오픈
         UIManager.instance.comedySelectWindow.Open(CurStageLevelData);
         
-        if(AudioManager.instance != null)
-            AudioManager.instance.PlayMainGameMusic();
     }
 
     public void NextLevel()
     {
         //curPoint = 0;
-        ++curLevel;
-
-        if (GameManager.instance.gameConfig.StageLevelDatas.Length <= (int)curLevel)
+        if (curLevel == Level.EASY)
+            curLevel = Level.NORMAL;
+        else if (curLevel == Level.NORMAL)
+            curLevel = Level.HARD;
+        else if (curLevel == Level.HARD)
         {
             SceneManager.LoadScene(GameManager.instance.lastSceneName);
+            return;
         }
-        else
-        {
-            LoadData();
-            StartStage();
-        }
+
+        LoadData();
+        StartStage();
+
     }
 
     public void Restart()

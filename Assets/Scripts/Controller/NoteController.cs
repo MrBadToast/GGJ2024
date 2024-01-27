@@ -81,7 +81,10 @@ public class NoteController : MonoBehaviour
         {
             if (PlayerController.instance != null)
                 PlayerController.instance.WrongAnswer();
-            
+
+            if (AudioManager.instance != null)
+                AudioManager.instance.PlayRandomMiniGameMusic();
+
             noteList.Remove(other.gameObject);
             
             Destroy(other.gameObject);

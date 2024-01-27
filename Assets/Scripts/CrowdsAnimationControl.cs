@@ -7,6 +7,14 @@ public class CrowdsAnimationControl : MonoBehaviour
 {
     public DOTweenAnimation[] crowdList;
 
+    private void Start()
+    {
+        foreach (var c in crowdList)
+        {
+            c.isSpeedBased = true;
+        }
+    }
+
     public void PauseAll()
     {
         foreach (var c in crowdList)
@@ -27,7 +35,7 @@ public class CrowdsAnimationControl : MonoBehaviour
     {
         foreach(var c in crowdList)
         {
-            c.duration = 1/speed;
+            c.duration = speed;
         }
     }
 

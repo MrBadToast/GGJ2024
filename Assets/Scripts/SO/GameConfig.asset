@@ -15,32 +15,32 @@ MonoBehaviour:
   StartLevel: 0
   StageLevelDatas:
   - Name: 0
-    CompletePoint: 200
-    DefaultPoint: 2
-    WrongAnswerTimes: 1
-    AnswerBonusTimes: 3
-    MiniGamePackage:
-      ArrowSpawnCount: 3
-      ArrowSpawnTime: 0.5
-      ArrowSpeed: 300
-  - Name: 1
-    CompletePoint: 500
-    DefaultPoint: 2
-    WrongAnswerTimes: 1
-    AnswerBonusTimes: 3
-    MiniGamePackage:
-      ArrowSpawnCount: 4
-      ArrowSpawnTime: 2
-      ArrowSpeed: 200
-  - Name: 2
-    CompletePoint: 1500
+    CompletePoint: 120
     DefaultPoint: 2
     WrongAnswerTimes: 1
     AnswerBonusTimes: 3
     MiniGamePackage:
       ArrowSpawnCount: 5
-      ArrowSpawnTime: 2
-      ArrowSpeed: 200
+      ArrowSpawnTime: 1
+      ArrowSpeed: 300
+  - Name: 1
+    CompletePoint: 300
+    DefaultPoint: 2
+    WrongAnswerTimes: 1
+    AnswerBonusTimes: 3
+    MiniGamePackage:
+      ArrowSpawnCount: 10
+      ArrowSpawnTime: 0.5
+      ArrowSpeed: 400
+  - Name: 2
+    CompletePoint: 700
+    DefaultPoint: 2
+    WrongAnswerTimes: 1
+    AnswerBonusTimes: 3
+    MiniGamePackage:
+      ArrowSpawnCount: 15
+      ArrowSpawnTime: 0.4
+      ArrowSpeed: 500
   jokeOptionsList:
   - {fileID: 11400000, guid: 02e1ad15473534a4e952ee4e1e33397c, type: 2}
   - {fileID: 11400000, guid: 50afabebc905100499925c5565364c8f, type: 2}

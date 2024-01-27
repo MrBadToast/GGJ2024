@@ -15,14 +15,19 @@ public class ComedySelectWindow : MonoBehaviour
     public TMP_Text txtOptionAnswer;
     public TMP_Text txtOptionWrongAnswer_1;
     public TMP_Text txtOptionWrongAnswer_2;
+    public TMP_Text txtOptionResult;
     
     public List<string> answerList = new();
+    public AudioSource audioSource;
+    public AudioClip correctSound;
+    public AudioClip wrongSound;
     private Random rng = new();
 
     JokeOptions currentJokeOption;
 
     public void SetData()
     {
+        txtOptionResult.text = string.Empty;
         currentJokeOption = GameManager.instance.gameConfig.PickRandomJokeOption();
         txtOptionHint.text = currentJokeOption.hint;
         
@@ -57,7 +62,7 @@ public class ComedySelectWindow : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         for (var i = 0; i < buttons.Length; i++)
         {
@@ -67,21 +72,40 @@ public class ComedySelectWindow : MonoBehaviour
                 if (answerList[capturedIndex].Equals(currentJokeOption.proper))
                 {
                     Debug.Log("정답입니다.");
+                    txtOptionResult.color = new Color(0.455f, 0.718f, 0.18f);
+                    txtOptionResult.text = "청중 공략 성공! 보너스 점수 적용";
+                    audioSource.PlayOneShot(correctSound);
                     StageController.instance.AddPoint(_levelData.DefaultPoint * _levelData.AnswerBonusTimes);
-                    gameObject.SetActive(false);
-                    UIManager.instance.miniGameWindow.Open(_levelData.MiniGamePackage);
+                    foreach(var b in buttons)
+                    {
+                        b.onClick.RemoveAllListeners();
+                    }
+                    Invoke("ProceedToMinigame",3.0f);
+
                 }
                 else
                 {
                     Debug.Log("틀렸습니다.");
+                    txtOptionResult.color = new Color(1.0f, 0.49f, 0.31f);
+                    txtOptionResult.text = "청중 공략 실패...";
+                    audioSource.PlayOneShot(wrongSound);
                     StageController.instance.AddPoint(_levelData.DefaultPoint * _levelData.WrongAnswerTimes);
-                    gameObject.SetActive(false);
-                    UIManager.instance.miniGameWindow.Open(_levelData.MiniGamePackage);
+                    foreach (var b in buttons)
+                    {
+                        b.onClick.RemoveAllListeners();
+                    }
+                    Invoke("ProceedToMinigame", 3.0f);
                 }
               
             });
         }
    
+    }
+
+    public void ProceedToMinigame()
+    {
+        gameObject.SetActive(false);
+        UIManager.instance.miniGameWindow.Open(_levelData.MiniGamePackage);
     }
 
     // Update is called once per frame
