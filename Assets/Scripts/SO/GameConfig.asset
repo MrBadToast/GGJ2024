@@ -23,10 +23,10 @@ MonoBehaviour:
     DefaultPoint: 2
     WrongAnswerTimes: 1
     AnswerBonusTimes: 3
-    miniGamePackageData:
-      ArrowSpawnCount: 2
-      ArrowSpawnTime: 4
-      ArrowSpeed: 4
+    MiniGamePackage:
+      ArrowSpawnCount: 3
+      ArrowSpawnTime: 2
+      ArrowSpeed: 200
   - Name: 1
     CompletePoint: 12
     OptionHint: "\uBC30\uCD94"
@@ -36,10 +36,10 @@ MonoBehaviour:
     DefaultPoint: 2
     WrongAnswerTimes: 1
     AnswerBonusTimes: 3
-    miniGamePackageData:
+    MiniGamePackage:
       ArrowSpawnCount: 4
-      ArrowSpawnTime: 6
-      ArrowSpeed: 6
+      ArrowSpawnTime: 2
+      ArrowSpeed: 200
   - Name: 2
     CompletePoint: 18
     OptionHint: "\uC0AC\uACFC"
@@ -49,7 +49,7 @@ MonoBehaviour:
     DefaultPoint: 2
     WrongAnswerTimes: 1
     AnswerBonusTimes: 3
-    miniGamePackageData:
-      ArrowSpawnCount: 6
-      ArrowSpawnTime: 8
-      ArrowSpeed: 8
+    MiniGamePackage:
+      ArrowSpawnCount: 5
+      ArrowSpawnTime: 2
+      ArrowSpeed: 200

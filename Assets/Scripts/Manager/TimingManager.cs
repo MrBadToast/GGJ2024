@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TimingManager : MonoBehaviour
 {
@@ -9,23 +10,23 @@ public class TimingManager : MonoBehaviour
     private void Awake() => instance = this;
 
     public bool isEnter = false;
-    public GameObject curObj;
+    public Note curNote;
     
     // Update is called once per frame
     void Update()
     {
+        var keyCode = Event.current.keyCode;
         if (isEnter == true)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (keyCode == curNote.key)
             {
                 Debug.Log("Hit");
-                Destroy(curObj);
+                Destroy(curNote.gameObject);
             }
         }
         else
         {
-            if(Input.GetKeyDown(KeyCode.Space))
-                Debug.Log("Miss");
+            Debug.Log("Miss");
         }
     }
 }

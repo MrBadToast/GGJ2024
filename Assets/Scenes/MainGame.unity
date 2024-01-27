@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6005943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -175,6 +175,7 @@ MonoBehaviour:
   _arrowSpawnCount: 0
   _arrowSpawnTime: 0
   _arrowSpeed: 0
+  _theNoteController: {fileID: 1372673194}
 --- !u!1 &94980966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,10 +1969,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fea84770334749d0a993bf48aeda6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 120
   tfNoteAppear: {fileID: 1725722815}
   goNote: {fileID: 3623277976454438128, guid: 457bbf20095e446c8845f6844a4671ff, type: 3}
   timingManager: {fileID: 1372673193}
+  waitToSpawnTime: 0
+  spawnCount: 0
 --- !u!1 &1378890213
 GameObject:
   m_ObjectHideFlags: 0
