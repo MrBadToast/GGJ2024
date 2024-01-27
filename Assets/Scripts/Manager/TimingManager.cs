@@ -31,6 +31,9 @@ public class TimingManager : MonoBehaviour
                     
                     if(AudioManager.instance != null)
                         AudioManager.instance.PlayRandomMiniGameMusic();
+
+                    if (PlayerController.instance != null)
+                        PlayerController.instance.CorrectAnswer();
                     
                     Destroy(curNote.gameObject);
                 }
@@ -48,6 +51,9 @@ public class TimingManager : MonoBehaviour
                     if(AudioManager.instance != null)
                         AudioManager.instance.PlayRandomMiniGameMusic();
                     
+                    if (PlayerController.instance != null)
+                        PlayerController.instance.CorrectAnswer();
+                    
                     Destroy(curNote.gameObject);
                 }
             }
@@ -64,6 +70,9 @@ public class TimingManager : MonoBehaviour
                     if(AudioManager.instance != null)
                         AudioManager.instance.PlayRandomMiniGameMusic();
                     
+                    if (PlayerController.instance != null)
+                        PlayerController.instance.CorrectAnswer();
+                    
                     Destroy(curNote.gameObject);
                 }
             }
@@ -79,6 +88,9 @@ public class TimingManager : MonoBehaviour
                     
                     if(AudioManager.instance != null)
                         AudioManager.instance.PlayRandomMiniGameMusic();
+                    
+                    if (PlayerController.instance != null)
+                        PlayerController.instance.CorrectAnswer();
                     
                     Destroy(curNote.gameObject);
                 }

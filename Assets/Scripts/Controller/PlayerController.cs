@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,21 +13,13 @@ public class PlayerController : MonoBehaviour
 
     public void CorrectAnswer()
     {
+        var rand = Random.Range(0,1);
+        anim.SetTrigger(rand == 0 ? "Bored" : "SuperBored");
     }
 
     public void WrongAnswer()
     {
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        var rand = Random.Range(0,1);
+        anim.SetTrigger(rand == 0 ? "Angry" : "Sad");
     }
 }

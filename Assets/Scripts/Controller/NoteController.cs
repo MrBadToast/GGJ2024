@@ -79,8 +79,12 @@ public class NoteController : MonoBehaviour
     {
         if (other.CompareTag("Note"))
         {
-            Destroy(other.gameObject);
+            if (PlayerController.instance != null)
+                PlayerController.instance.WrongAnswer();
+            
             noteList.Remove(other.gameObject);
+            
+            Destroy(other.gameObject);
         }
     }
 }
