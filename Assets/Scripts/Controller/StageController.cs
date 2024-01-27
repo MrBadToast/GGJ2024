@@ -26,6 +26,7 @@ public class StageController : MonoBehaviour
     public void StartStage()
     {
         LoadData();
+        curPoint = 0;
         // 4. ComedySelectWindow 오픈
         UIManager.instance.comedySelectWindow.Open(CurStageLevelData);
         

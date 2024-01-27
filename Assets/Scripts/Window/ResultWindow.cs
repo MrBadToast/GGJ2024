@@ -50,6 +50,10 @@ public class ResultWindow : MonoBehaviour
         CurrentScoreText.GetComponent<TextMeshProUGUI>().text = "현재 점수 0";
         TotalScoreText.GetComponent<TextMeshProUGUI>().text = "누적 점수 " + (GameManager.instance.totalScore + StageController.instance.curPoint).ToString();
 
+
+        GameManager.instance.totalScore += StageController.instance.curPoint;
+        //여기서 Totalscore에 합산
+
         // 애니메이션 - 다음 스테이지 or 다음 스테이지 or 다시 도전
         yield return new WaitForSeconds(1f);
 
@@ -70,7 +74,7 @@ public class ResultWindow : MonoBehaviour
         }
 
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
 
         GetComponent<DOTweenAnimation>().DORestartAllById("FadeoutResult");
         Tween tween = GetComponent<DOTweenAnimation>().tween;
@@ -80,6 +84,8 @@ public class ResultWindow : MonoBehaviour
         CurrentScoreText.SetActive(false);
         TotalScoreText.SetActive(false);
         NextScoreText.SetActive(false);
+
+        GetComponent<CanvasGroup>().alpha = 1.0f;
 
         Result();
     }
