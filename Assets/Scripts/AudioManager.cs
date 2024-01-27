@@ -23,16 +23,18 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource menuMusic, mainGameMusic, guestLaughMusic;
     public AudioSource[] miniGameMusic;
+    public AudioSource[] robotLaughs;
+    public AudioSource[] guestSounds;
     public AudioSource[] allSFX;
 
     public void StopMusic()
     {
         menuMusic.Stop();
-        //mainGameMusic.Stop();
+        mainGameMusic.Stop();
         //guestLaughMusic.Stop();
         
-        // foreach (var audio in miniGameMusic)
-        //     audio.Stop();
+        foreach (var audio in miniGameMusic)
+            audio.Stop();
         
         foreach (var audio in allSFX)
             audio.Stop();
@@ -67,5 +69,22 @@ public class AudioManager : MonoBehaviour
         allSFX[index].Stop();
         allSFX[index].pitch = random ? Random.Range(0.25f, 1.75f) : pitch;
         allSFX[index].Play();
+    }
+
+    public void PlayRandomMiniGameMusic()
+    {
+        foreach (var audio in miniGameMusic)
+            audio.Stop();
+
+        var index = Random.Range(0, miniGameMusic.Length - 1);
+        miniGameMusic[index].Play();
+    }
+
+    public void PlayGuestSounds(int index)
+    {
+        foreach (var audio in guestSounds)
+            audio.Stop();
+
+        guestSounds[index].Play();
     }
 }

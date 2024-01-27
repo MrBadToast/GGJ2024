@@ -28,6 +28,9 @@ public class StageController : MonoBehaviour
         LoadData();
         // 4. ComedySelectWindow 오픈
         UIManager.instance.comedySelectWindow.Open(CurStageLevelData);
+        
+        if(AudioManager.instance != null)
+            AudioManager.instance.PlayMainGameMusic();
     }
 
     public void NextLevel()

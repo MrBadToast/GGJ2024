@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteSpeed: 400
   key: 0
-  img: {fileID: 0}
+  img: {fileID: 365699008958217480}
   right: {fileID: 21300000, guid: ee2cf7e38f8cde04198f0acfa6856848, type: 3}
   left: {fileID: 21300000, guid: feb1dbc25e23ddc43aafde0824e8620d, type: 3}
   up: {fileID: 21300000, guid: c1b7c7b0e9171084aa528a189a193a1b, type: 3}

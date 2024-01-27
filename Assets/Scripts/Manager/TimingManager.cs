@@ -28,6 +28,10 @@ public class TimingManager : MonoBehaviour
                     StageController.instance.AddPoint(10);
                     score++;
                     theNoteController.noteList.Remove(curNote.gameObject);
+                    
+                    if(AudioManager.instance != null)
+                        AudioManager.instance.PlayRandomMiniGameMusic();
+                    
                     Destroy(curNote.gameObject);
                 }
             }
@@ -40,6 +44,10 @@ public class TimingManager : MonoBehaviour
                     StageController.instance.AddPoint(10);
                     score++;
                     theNoteController.noteList.Remove(curNote.gameObject);
+                    
+                    if(AudioManager.instance != null)
+                        AudioManager.instance.PlayRandomMiniGameMusic();
+                    
                     Destroy(curNote.gameObject);
                 }
             }
@@ -52,6 +60,10 @@ public class TimingManager : MonoBehaviour
                     StageController.instance.AddPoint(10);
                     score++;
                     theNoteController.noteList.Remove(curNote.gameObject);
+                    
+                    if(AudioManager.instance != null)
+                        AudioManager.instance.PlayRandomMiniGameMusic();
+                    
                     Destroy(curNote.gameObject);
                 }
             }
@@ -64,6 +76,10 @@ public class TimingManager : MonoBehaviour
                     StageController.instance.AddPoint(10);
                     score++;
                     theNoteController.noteList.Remove(curNote.gameObject);
+                    
+                    if(AudioManager.instance != null)
+                        AudioManager.instance.PlayRandomMiniGameMusic();
+                    
                     Destroy(curNote.gameObject);
                 }
             }
