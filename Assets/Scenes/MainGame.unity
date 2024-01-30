@@ -2158,7 +2158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.00012207031, y: 4.9799805}
+  m_AnchoredPosition: {x: 0, y: 4.9799805}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &884965457
@@ -4760,7 +4760,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30.100586, y: 99.296326}
+  m_Size: {x: 46.2, y: 99.296326}
   m_EdgeRadius: 0
 --- !u!50 &1514319728
 Rigidbody2D:
@@ -4966,7 +4966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191, y: -0}
+  m_AnchoredPosition: {x: -207.7, y: -0}
   m_SizeDelta: {x: 160, y: 4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1606720776
